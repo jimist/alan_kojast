@@ -20,7 +20,7 @@ class StationsAdmin(admin.ModelAdmin):
 class VehiclesAdmin(admin.ModelAdmin):
     list_display = (
     'type', 'gender', 'full_capacity', 'number', 'active', 'latitude', 'longitude', 'get_station', 'created_at',
-    'updated_at')
+    'updated_at', 'accessKey')
 
     def get_station(self, obj):
         ws = obj.currentStation
