@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class VehiclesConfig(AppConfig):
-    name = 'apps.alan_kojast'
+class AlanKojastConfig(AppConfig):
+    name = 'alan_kojast'
