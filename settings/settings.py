@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'apps.vehicles',
+    'apps.alan_kojast',
 ]
 
 MIDDLEWARE = [

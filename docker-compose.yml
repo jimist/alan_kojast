@@ -1,4 +1,4 @@
-version: '3.6'
+version: '3.3'
 
 services:
   web:
@@ -23,6 +23,3 @@ services:
       - redisdata:/data
     container_name: alan_kojast_redis
 
-volumes:
-  postgres_badoom:
-  redisdata:

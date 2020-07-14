@@ -1,4 +1,4 @@
-"""vehicles URL Configuration
+"""alan_kojast URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -18,6 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/v1/vehicles/', include('apps.vehicles.urls')),
+    url(r'^api/v1/', include('apps.alan_kojast.urls')),
 
 ]

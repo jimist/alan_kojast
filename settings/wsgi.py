@@ -1,5 +1,5 @@
 """
-WSGI config for vehicles project.
+WSGI config for alan_kojast project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
