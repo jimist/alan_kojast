@@ -1,2 +1,5 @@
+from django.http import HttpResponseRedirect, JsonResponse
+
+
 def get_all_vehicles(request):
-    print("test")
+    return JsonResponse({"status": 200, "message": "test"})

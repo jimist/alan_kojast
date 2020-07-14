@@ -1,0 +1,28 @@
+version: '3.6'
+
+services:
+  web:
+    restart: always
+    build: .
+    ports:
+      - 8086:8000
+    container_name: alan_kojast_web
+    environment:
+      REDIS_HOST: 'redis'
+      REDIS_PORT: '6378'
+    depends_on:
+      - redis
+    volumes:
+      - .:/app/
+  redis:
+    restart: always
+    image: redis:latest
+    ports:
+      - '6378:6379'
+    volumes:
+      - redisdata:/data
+    container_name: alan_kojast_redis
+
+volumes:
+  postgres_badoom:
+  redisdata:

@@ -25,7 +25,7 @@ SECRET_KEY = 'r5evc9%dp%7c1_sx=5wd&krw48pywbs-&2v$2^9)*v1az7*@o0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'vehicles',
+    'rest_framework',
+    'apps.vehicles',
 ]
 
 MIDDLEWARE = [
@@ -74,6 +75,16 @@ WSGI_APPLICATION = 'settings.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': "redis://{}:{}/".format(os.getenv('REDIS_HOST'), os.getenv('REDIS_PORT')),
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    },
+}
 
 DATABASES = {
     'default': {
