@@ -17,8 +17,8 @@ class Stations(models.Model):
     name = models.CharField(max_length=127)
     active = models.BooleanField(default=True)
     region = models.CharField(max_length=63, default='ferdowsi')
-    latitude = models.IntegerField()
-    longitude = models.IntegerField()
+    latitude = models.FloatField()
+    longitude = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -36,8 +36,8 @@ class Vehicles(models.Model):
     full_capacity = models.IntegerField()
     number = models.CharField(max_length=31, null=True, default=None)
     active = models.BooleanField(default=False)
-    latitude = models.IntegerField(null=True)
-    longitude = models.IntegerField(null=True)
+    latitude = models.FloatField(null=True)
+    longitude = models.FloatField(null=True)
     currentStation = models.ForeignKey(Stations, on_delete=models.SET_NULL, default=None, null=True)
     accessKey = models.CharField(max_length=128, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -50,7 +50,7 @@ class Vehicles(models.Model):
 
 class AccessPoints(models.Model):
     unique_address = models.CharField(max_length=256)
-    latitude = models.IntegerField()
-    longitude = models.IntegerField()
+    latitude = models.FloatField()
+    longitude = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

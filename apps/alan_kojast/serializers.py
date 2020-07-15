@@ -7,8 +7,8 @@ class StationSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=127)
     active = serializers.BooleanField(default=True)
     region = serializers.CharField(max_length=63)
-    latitude = serializers.IntegerField()
-    longitude = serializers.IntegerField()
+    latitude = serializers.FloatField()
+    longitude = serializers.FloatField()
 
 
 class VehicleSerializer(serializers.Serializer):
@@ -17,6 +17,6 @@ class VehicleSerializer(serializers.Serializer):
     full_capacity = serializers.IntegerField()
     number = serializers.CharField(max_length=31)
     active = serializers.BooleanField()
-    latitude = serializers.IntegerField()
-    longitude = serializers.IntegerField()
+    latitude = serializers.FloatField()
+    longitude = serializers.FloatField()
     currentStation = StationSerializer()

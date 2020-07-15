@@ -23,3 +23,5 @@ services:
       - redisdata:/data
     container_name: alan_kojast_redis
 
+volumes:
+  redisdata:
