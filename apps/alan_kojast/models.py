@@ -45,7 +45,8 @@ class Vehicles(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def save(self, *args, **kwargs):
-        self.accessKey = get_random_string(128)
+        if len(self.accessKey) < 50:
+            self.accessKey = get_random_string(128)
         super(Vehicles, self).save(*args, **kwargs)
 
 

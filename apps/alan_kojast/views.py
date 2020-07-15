@@ -67,10 +67,11 @@ def set_vehicle_status(request):
     else:
         return JsonResponse({"status": 403})
     status = request.GET['status']
+    print(status)
     vehicle = Vehicles.objects.filter(accessKey=access_key).first()
-    if vehicle is None or (status != 0 and status != 1):
+    if vehicle is None:
         return JsonResponse({"status": 403})
-    vehicle.active = True if status == 1 else False
+    vehicle.active = True if status == '1' else False
     vehicle.save()
     return JsonResponse({"status": 200, "result": "success"})
 
