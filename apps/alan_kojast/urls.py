@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^vehicles/$', get_all_vehicles),
     url(r'^stations/$', get_all_stations),
     url(r'^access_points/$', get_all_access_points),
-    # url(r'^vehicle/locate/$', ),
+    url(r'^vehicle/locate/$', locate_vehicle),
     url(r'^vehicle/status/$', set_vehicle_status),
     url(r'^stations/best$', get_most_populated_station),
 ]
