@@ -3,6 +3,7 @@ from .models import Stations, GENDERS, Vehicles, VEHICLE_TYPES
 
 
 class StationSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
     gender = serializers.ChoiceField(choices=GENDERS)
     name = serializers.CharField(max_length=127)
     active = serializers.BooleanField(default=True)
@@ -12,6 +13,7 @@ class StationSerializer(serializers.Serializer):
 
 
 class VehicleSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
     gender = serializers.ChoiceField(choices=GENDERS)
     type = serializers.ChoiceField(choices=VEHICLE_TYPES)
     full_capacity = serializers.IntegerField()
