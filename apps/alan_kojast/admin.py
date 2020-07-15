@@ -36,4 +36,5 @@ class AccessPointsAdmin(admin.ModelAdmin):
 
 admin.site.register(GuestTokens, GuestTokenAdmin)
 admin.site.register(Stations, StationsAdmin)
+admin.site.register(Vehicles, VehiclesAdmin)
 admin.site.register(AccessPoints, AccessPointsAdmin)
