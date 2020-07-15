@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import GuestTokens, Stations, Vehicles
+from .models import GuestTokens, Stations, Vehicles, AccessPoints
 
 
 class GuestTokenAdmin(admin.ModelAdmin):
@@ -30,6 +30,10 @@ class VehiclesAdmin(admin.ModelAdmin):
             return ws.name + "-" + str(ws.id)
 
 
+class AccessPointsAdmin(admin.ModelAdmin):
+    list_display = ('unique_address', 'latitude', 'longitude', 'created_at', 'updated_at')
+
+
 admin.site.register(GuestTokens, GuestTokenAdmin)
 admin.site.register(Stations, StationsAdmin)
-admin.site.register(Vehicles, VehiclesAdmin)
+admin.site.register(AccessPoints, AccessPointsAdmin)

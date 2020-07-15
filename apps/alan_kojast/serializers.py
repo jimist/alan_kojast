@@ -6,6 +6,7 @@ class StationSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     gender = serializers.ChoiceField(choices=GENDERS)
     name = serializers.CharField(max_length=127)
+    number = serializers.IntegerField()
     active = serializers.BooleanField(default=True)
     region = serializers.CharField(max_length=63)
     latitude = serializers.FloatField()
@@ -22,3 +23,9 @@ class VehicleSerializer(serializers.Serializer):
     latitude = serializers.FloatField()
     longitude = serializers.FloatField()
     currentStation = StationSerializer()
+
+
+class AccessPointSerializer(serializers.Serializer):
+    unique_address = serializers.CharField(max_length=256)
+    latitude = serializers.FloatField()
+    longitude = serializers.FloatField()

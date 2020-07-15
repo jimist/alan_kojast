@@ -15,6 +15,7 @@ VEHICLE_TYPES = (
 class Stations(models.Model):
     gender = models.CharField(max_length=1, choices=GENDERS)
     name = models.CharField(max_length=127)
+    number = models.IntegerField(default=0)
     active = models.BooleanField(default=True)
     region = models.CharField(max_length=63, default='ferdowsi')
     latitude = models.FloatField()
