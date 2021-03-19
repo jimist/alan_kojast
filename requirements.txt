@@ -1,5 +1,5 @@
 Django==1.11.29
-djangorestframework==3.9.4
+djangorestframework==3.11.2
 python-dotenv==0.14.0
 redis==3.5.3
 requests==2.23.0
